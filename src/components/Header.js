@@ -28,6 +28,8 @@ const Header = (props) => {
     });
   }, [userName]);
 
+  // here we are checking the username if it is not there we are siginin with popup, and
+  // else if found we are signing oit by signOut  auth method
   const handleAuth = () => {
     if (!userName) {
       auth

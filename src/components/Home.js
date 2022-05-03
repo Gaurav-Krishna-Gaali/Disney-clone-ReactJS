@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import ImgSlider from "./ImgSlider";
+import Viewers from "./Viewers";
 
 const Home = () => {
   return (
     <Container>
       <ImgSlider />
+      <Viewers />
     </Container>
   );
 };
@@ -15,10 +17,10 @@ const Container = styled.main`
   overflow-x: hidden;
   display: block;
   top: 72px;
-  padding: calc(3.5vw + 5px);
+  padding: 0 calc(3.5vw + 5px);
 
   &:after {
-    background: url("/images/home-background.png") center center/ cover
+    background: url("/images/home-background.png") center center / cover
       no-repeat fixed;
     content: "";
     position: absolute;
@@ -27,4 +29,5 @@ const Container = styled.main`
     z-index: -1;
   }
 `;
+
 export default Home;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Recommends from "../Recommends";
+import Recommends from "./Recommends";
 import ImgSlider from "./ImgSlider";
 import NewDisney from "./NewDisney";
 import Originals from "./Originals";

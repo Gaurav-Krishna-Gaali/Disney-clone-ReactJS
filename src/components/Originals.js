@@ -13,9 +13,13 @@ const Originals = () => {
           movies.map((movie, key) => (
             <Wrap key={key}>
               {movie.id}
-              <Link to={`/detail/` + movie.id}>
-                <img src={movie.cardImg} alt={movie.title} />
-              </Link>
+              {/* <Link to={`/detail/` + movie.id}> */}
+              <img
+                src={movie.cardImg}
+                alt={movie.title}
+                onClick={() => window.open("/detail/" + movie.id, "__self")}
+              />
+              {/* </Link> */}
             </Wrap>
           ))}
       </Content>

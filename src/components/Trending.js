@@ -1,44 +1,23 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { selectTrending } from "../features/movie/movieSlice";
+import { useSelector } from "react-redux";
 
 const Trending = () => {
+  const movies = useSelector(selectTrending);
   return (
     <Container>
       <h4>Recommended for you</h4>
       <Content>
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://lumiere-a.akamaihd.net/v1/images/p_insideout_19751_af12286c.jpeg?region=0%2C0%2C540%2C810"
-              alt=""
-            />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://lumiere-a.akamaihd.net/v1/images/p_insideout_19751_af12286c.jpeg?region=0%2C0%2C540%2C810"
-              alt=""
-            />
-          </Link>
-        </Wrap>
-
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://lumiere-a.akamaihd.net/v1/images/p_insideout_19751_af12286c.jpeg?region=0%2C0%2C540%2C810"
-              alt=""
-            />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://lumiere-a.akamaihd.net/v1/images/p_insideout_19751_af12286c.jpeg?region=0%2C0%2C540%2C810"
-              alt=""
-            />
-          </Link>
-        </Wrap>
+        {movies &&
+          movies.map((movie, key) => (
+            <Wrap key={key}>
+              {movie.id}
+              <Link to={`/detail/` + movie.id}>
+                <img src={movie.cardImg} alt={movie.title} />
+              </Link>
+            </Wrap>
+          ))}
       </Content>
     </Container>
   );

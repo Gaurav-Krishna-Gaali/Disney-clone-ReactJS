@@ -15,7 +15,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const userName = useSelector(selectUserName);
   let recommends = [];
-  let newDisneys = [];
+  let newDisney = [];
   let originals = [];
   let trending = [];
 
@@ -32,7 +32,7 @@ const Home = () => {
             break;
 
           case "new":
-            newDisneys = [...newDisneys, { id: doc.id, ...doc.data() }];
+            newDisney = [...newDisney, { id: doc.id, ...doc.data() }];
             break;
 
           case "original":
@@ -48,7 +48,7 @@ const Home = () => {
       dispatch(
         setMovies({
           recommend: recommends,
-          newDisneys: newDisneys,
+          newDisney: newDisney,
           original: originals,
           trending: trending,
         })

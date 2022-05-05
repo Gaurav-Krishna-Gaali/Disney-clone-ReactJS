@@ -13,13 +13,13 @@ const Recommends = () => {
           movies.map((movie, key) => (
             <Wrap key={key}>
               {movie.id}
-              {/* <Link to={`/detail/` + movie.id}> */}
+              <Link to={`/detail/` + movie.id}>
               <img
                 src={movie.cardImg}
                 alt={movie.title}
-                onClick={() => window.open("/detail/" + movie.id, "__self")}
+                // onClick={() => window.open("/detail/" + movie.id, "__self")}
               />
-              {/* </Link> */}
+              </Link>
             </Wrap>
           ))}
       </Content>
